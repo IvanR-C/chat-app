@@ -3,3 +3,7 @@ body {
     background: rgb(230,0,126);
 background: linear-gradient(110deg, rgba(230,0,126,1) 0%, rgba(88,192,238,1) 100%)
 }
+
+.font-link{
+font-family: 'Montserrat', sans-serif;
+}

@@ -16,31 +16,31 @@ import { Link} from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const [visibility, setVisibility] = useState(false);
 
-  const loginErrorMessage = "Invalid Username or Password";
+  const invalidUsernameMessage = "Username already taken";
 
-  const [loginError, setLoginError] = useState(false);
+  const [invalidUsername, setInvalidUsername] = useState(false);
 
   const toggleVisibility = () => {
     setVisibility(!visibility);
   };
 
-  const toggleLoginError = (boolean) => {
-    setLoginError(boolean);
+  const toggleInvalidUsername = (boolean) => {
+    setInvalidUsername(boolean);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
-    const login = data.get("login").split('@')[0];
+    const login = data.get("login");
     const password = data.get("password");
 
     if (login != "guillesaez15" || password != "1234") {
       console.log(login + " " + password);
-      toggleLoginError(true);
+      toggleInvalidUsername(true);
     }
 
     /*
@@ -65,18 +65,19 @@ const LoginForm = () => {
     >
       <Paper elevation = {12}
         sx={{
-          height: "400px",
-          width: "350px",
+          height: "550px",
+          width: "450px",
           textAlign: "center",
           borderRadius: "20px",
         }}
       >
         <Typography
-          sx={{ marginTop: "40px", marginBottom: "30px", fontSize: "2rem" }}>
-          <b>Login</b>
+          sx={{ marginTop: "40px", marginBottom: "30px", fontSize: "2rem" }}
+        >
+          <b>Register</b>
         </Typography>
-        {loginError ? (
-          <Alert severity="error">{loginErrorMessage}</Alert>
+        {invalidUsername ? (
+          <Alert severity="error">{invalidUsernameMessage}</Alert>
         ) : (
           <></>
         )}
@@ -100,13 +101,29 @@ const LoginForm = () => {
             size="small"
             name="login"
             sx={{
-              width: "200px",
+              width: "250px",
               "& .MuiOutlinedInput-root": {
                 borderRadius: "15px",
               },
             }}
             required
-            onChange={(e) => toggleLoginError(false)}
+            onChange={(e) => toggleInvalidUsername(false)}
+          />
+          <TextField
+            margin="normal"
+            id="email"
+            label="Email"
+            autoComplete="current-email"
+            size="small"
+            name="login"
+            sx={{
+              width: "250px",
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+              },
+            }}
+            required
+            onChange={(e) => toggleInvalidUsername(false)}
           />
           <TextField
             margin="normal"
@@ -116,7 +133,7 @@ const LoginForm = () => {
             size="small"
             name="password"
             sx={{
-              width: "200px",
+              width: "250px",
               "& .MuiOutlinedInput-root": {
                 borderRadius: "15px",
               },
@@ -132,7 +149,33 @@ const LoginForm = () => {
                 </InputAdornment>
               ),
             }}
-            onChange={(e) => toggleLoginError(false)}
+            onChange={(e) => toggleInvalidUsername(false)}
+          />
+                    <TextField
+            margin="normal"
+            id="confirm-password"
+            label="Confirm Password"
+            autoComplete="current-password"
+            size="small"
+            name="password"
+            sx={{
+              width: "250px",
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+              },
+            }}
+            required
+            type={visibility ? "text" : "password"}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={toggleVisibility}>
+                    {visibility ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+            onChange={(e) => toggleInvalidUsername(false)}
           />
           <Button
             margin="normal"
@@ -140,15 +183,16 @@ const LoginForm = () => {
             variant="contained"
             sx={{ marginTop: "20px", borderRadius: "15px", marginBottom: "30px" }}
           >
-            SIGN IN
+            REGISTER
           </Button>
-          <Link to ="/Register">
-            {'REGISTER'}
+          Already have an account?
+          <Link to ="/Login">
+            {'LOGIN'}
           </Link>
         </Box>
       </Paper>
     </Box>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default RegisterForm;

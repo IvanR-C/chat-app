@@ -1,15 +1,21 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-
+import { createTheme, ThemeProvider } from '@mui/material';
 import Login from './Login'
+import Register from './Register'
+import Chat from './Chat'
+const font = "'Montserrat', sans-serif"
+const theme = createTheme ({ typography: {fontFamily:font}})
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme = {theme}>
       <Routes>
-        <Route path="/*" element={<Login/>}/>
+        <Route exact path="/Login" element={<Login/>}/>
+        <Route exact path="/Register" element={<Register/>}/>
+        <Route exact path="/Chat" element={<Chat/>}/>
       </Routes>
-    </div>
+    </ThemeProvider>
   );
 }
 
