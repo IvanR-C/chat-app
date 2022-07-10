@@ -1,11 +1,7 @@
 import React from "react";
 import {
-  Paper,
   Box,
   TextField,
-  AppBar,
-  Toolbar,
-  IconButton,
   List,
 } from "@mui/material";
 import {chatMessages} from "../fData"
