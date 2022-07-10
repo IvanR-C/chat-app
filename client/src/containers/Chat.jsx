@@ -14,8 +14,7 @@ const Chat = () => {
         <Box sx={{ display:"grid", gridTemplateColumns: "340px auto"}}>
             <CssBaseline/>
             <Contacts/>
-            <ChatBox/>
-            
+            <ChatBox/>            
         </Box>
     )
 }
