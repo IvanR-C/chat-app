@@ -2,13 +2,25 @@ import React from "react";
 import {
   Paper,
   Box,
+  TextField,
+  AppBar,
+  Toolbar,
+  IconButton,
 } from "@mui/material";
 
 const ChatBox = () => {
   return (
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestias totam veritatis harum atque eius itaque rem mollitia est, magnam consectetur ab unde possimus quo illo rerum a recusandae aliquid?</div>
-      
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: "#ffffff",
+        borderLeft: "1px solid",
+        borderColor: "#808080",
+      }}
+    >
+      <TextField sx={{width: "100%", top: "auto", position: "fixed"}} id="outlined-basic" label="Type Here..."  />
 
+    </Box>
   );
 };
 
