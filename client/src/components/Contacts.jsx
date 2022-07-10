@@ -56,8 +56,8 @@ const messages = [
   },
   {
     id: 7,
-    primary: "Ediberta",
-    secondary: "Offline",
+    primary: "Ediberto",
+    secondary: "Online",
     person: "/static/images/avatar/1.jpg",
   },
 ];

@@ -12,7 +12,7 @@ export const chatMessages = [
     id: 2,
     sender: {id:2, name: "Pepe"},
     msg:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ",
     timeStamp: "20:02",
     position: "flex-end",
     color: "#9fa2b4"
