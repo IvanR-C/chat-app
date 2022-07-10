@@ -4,7 +4,7 @@ import {
     CssBaseline,
 } from '@mui/material'
 
-import ChatBox from '../components/ChatBox'
+import Contactos from '../components/Contactos'
 import ChatHeader from '../components/ChatHeader'
 
 const Chat = () => {
@@ -12,7 +12,7 @@ const Chat = () => {
     return(
         <Box sx={{minHeight: "100vh", minWidth: "100vh"}}>
             <CssBaseline/>
-            <ChatHeader/>
+            <Contactos/>
         </Box>
     )
 }

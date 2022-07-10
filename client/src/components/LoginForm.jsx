@@ -142,6 +142,7 @@ const LoginForm = () => {
           >
             SIGN IN
           </Button>
+          New around here?
           <Link to ="/Register">
             {'REGISTER'}
           </Link>
