@@ -21,8 +21,7 @@ const messages = [
   {
     id: 1,
     primary: "Manolo",
-    secondary:
-      "Online",
+    secondary: "Online",
     person: "/static/images/avatar/5.jpg",
   },
   {
@@ -34,8 +33,7 @@ const messages = [
   {
     id: 3,
     primary: "Julian",
-    secondary:
-      "Online",
+    secondary: "Online",
     person: "/static/images/avatar/2.jpg",
   },
   {
@@ -47,8 +45,7 @@ const messages = [
   {
     id: 5,
     primary: "Eduardo",
-    secondary:
-      "Online",
+    secondary: "Online",
     person: "/static/images/avatar/4.jpg",
   },
   {
@@ -60,42 +57,6 @@ const messages = [
   {
     id: 7,
     primary: "Ediberta",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 8,
-    primary: "Samuel",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 9,
-    primary: "Paolo",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 10,
-    primary: "Federico",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 11,
-    primary: "Demetrio",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 12,
-    primary: "Chaple",
-    secondary: "Offline",
-    person: "/static/images/avatar/1.jpg",
-  },
-  {
-    id: 13,
-    primary: "Chueco",
     secondary: "Offline",
     person: "/static/images/avatar/1.jpg",
   },
@@ -145,7 +106,13 @@ export default function Contacts() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Paper square sx={{ minHeight:"100vh", width: "360px", pb: "50px" }}>
+      <Paper
+        square
+        sx={{ display: "flex",
+         flexDirection: "column",
+          minHeight: "100vh",
+          backgroundColor: "#d4d4d4" }}
+      >
         <Typography
           variant="h5"
           gutterBottom
@@ -154,44 +121,48 @@ export default function Contacts() {
         >
           Inbox
         </Typography>
-        <List sx={{ mb: 2 }}>
+        <List sx={{ flex: "1", mb: 2 }}>
           {messages.map(({ id, primary, secondary, person }) => (
             <React.Fragment key={id}>
               <ListItem button>
                 <ListItemAvatar>
-                  <Avatar alt= {primary} src={person} />
+                  <Avatar sx = {{backgroundColor: "#9fa2b4"}} alt={primary} src={person} />
                 </ListItemAvatar>
                 <ListItemText primary={primary} secondary={secondary} />
               </ListItem>
             </React.Fragment>
           ))}
         </List>
+        <AppBar
+          sx={{
+            backgroundColor: "AppBar.background",
+            position: "relative",
+            height: "64px",
+            top: "auto",
+          }}
+        >
+          <Toolbar>
+            <IconButton color="inherit" aria-label="open drawer">
+              <AccountCircleIcon />
+            </IconButton>
+            <Box />
+            <IconButton color="inherit">
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
+            </IconButton>
+            <IconButton color="inherit">
+              <AddIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
       </Paper>
-      <AppBar
-        color="primary"
-        sx={{ maxWidth: "360px", height: "60px", top: "auto", bottom: 0, left: "0" }}
-      >
-        <Toolbar>
-          <IconButton color="inherit" aria-label="open drawer">
-            <AccountCircleIcon />
-          </IconButton>
-          <Box sx={{ flexGrow: 1 }} />
-          <IconButton color="inherit">
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
-          </IconButton>
-          <IconButton color="inherit">
-            <AddIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
     </React.Fragment>
   );
 }

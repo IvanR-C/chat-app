@@ -5,7 +5,7 @@ import Login from './Login'
 import Register from './Register'
 import Chat from './Chat'
 const font = "'Montserrat', sans-serif"
-const theme = createTheme ({ typography: {fontFamily:font}})
+const theme = createTheme ({ typography: {fontFamily:font}, palette: {AppBar: {background: "#9c9c9c"}}})
 
 function App() {
   return (

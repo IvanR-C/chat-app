@@ -11,7 +11,7 @@ import ChatBox from '../components/ChatBox'
 const Chat = () => {
     
     return(
-        <Box sx={{ display:"grid", gridTemplateColumns: "1fr 3fr"}}>
+        <Box sx={{ display:"grid", gridTemplateColumns: "340px auto"}}>
             <CssBaseline/>
             <Contacts/>
             <ChatBox/>
