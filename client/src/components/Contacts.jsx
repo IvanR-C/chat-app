@@ -145,7 +145,7 @@ export default function Contacts() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Paper square sx={{minHeight:"100vh", minWidth: "360px", pb: "50px" }}>
+      <Paper square sx={{ minHeight:"100vh", width: "360px", pb: "50px" }}>
         <Typography
           variant="h5"
           gutterBottom

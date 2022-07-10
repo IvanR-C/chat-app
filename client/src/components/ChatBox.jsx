@@ -12,14 +12,28 @@ const ChatBox = () => {
   return (
     <Box
       sx={{
-        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-end",
         backgroundColor: "#ffffff",
         borderLeft: "1px solid",
-        borderColor: "#808080",
+        borderColor: "#f0f0f0",
       }}
     >
-      <TextField sx={{width: "100%", top: "auto", position: "fixed"}} id="outlined-basic" label="Type Here..."  />
-
+      <TextField
+        sx={{
+          
+          padding: "4px",
+          "& .MuiFilledInput-root": {
+            borderRadius: "5px",
+            backgroundColor: "#d4d4d4"
+          },
+        }}
+        id="filled-basic"
+        variant="filled"
+        fullWidth
+        InputProps={{ disableUnderline: true }}
+      />
     </Box>
   );
 };
