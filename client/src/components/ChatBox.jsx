@@ -31,7 +31,7 @@ const ChatBox = () => {
         {chatMessages.map(({ id, sender, msg, timeStamp, position, color }) => (
             <ListItem key={id} sx={{justifyContent: `${position}`}}>
               <Card sx={{ backgroundColor: `${color}` }}>
-                <CardContent sx={{padding: "10px", "& .MuiCardContent-root:last-child": {
+                <CardContent sx={{paddingBottom: '0px',padding: "10px", "& .MuiCardContent-root": {
                 pb: "10px",
               },}}>
                   <Typography

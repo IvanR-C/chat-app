@@ -9,7 +9,7 @@ import LoginForm from '../components/LoginForm'
 const Login = () => {
     
     return(
-        <Container maxWidth="xs" id="login-container" sx={{height: "100vh"}}>
+        <Container maxWidth="xs" id="login-container">
             <CssBaseline/>
             <LoginForm/>
         </Container>
